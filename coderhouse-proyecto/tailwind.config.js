@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx}",
+    "./src/**/**/*.{js,jsx}",
   ],
   theme: {
     container: {
@@ -11,5 +11,7 @@ module.exports = {
 
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+  ],
 }
