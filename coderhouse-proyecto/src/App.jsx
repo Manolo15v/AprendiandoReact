@@ -1,11 +1,14 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import ItemListContainer from './containers/ItemListContainer'
 
 function App() {
 
   return (
-    <Navbar/>
+    <>    
+      <Navbar/>
+      <ItemListContainer texto='Proyecto en curso'/>
+    </>
   )
 }
 
