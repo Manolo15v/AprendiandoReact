@@ -11,7 +11,5 @@ module.exports = {
 
     extend: {},
   },
-  plugins: [
-    require("tailwindcss-animation-delay"),
-  ],
+  plugins: [],
 }
