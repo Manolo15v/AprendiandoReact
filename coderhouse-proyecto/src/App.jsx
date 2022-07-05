@@ -1,12 +1,11 @@
-import './App.css'
-import Navbar from './components/Navbar'
+import NavBar from './components/NavBar/Navbar'
 import ItemListContainer from './containers/ItemListContainer'
 
 function App() {
 
   return (
     <>    
-      <Navbar/>
+      <NavBar/>
       <ItemListContainer texto='Proyecto en curso'/>
     </>
   )
