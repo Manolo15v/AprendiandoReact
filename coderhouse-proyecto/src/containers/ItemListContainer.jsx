@@ -1,11 +1,10 @@
-import ItemCount from "../components/Item/ItemCount";
-import CargeView from "./CargeView";
+import { useEffect, useState } from "react";
+import ItemList from "../components/Item/ItemList";
 
 export default function ItemListContainer() {
   return (
     <main className="bg-gray-50 h-screen flex items-center text-slate-800">
-      <CargeView text= "Cargando proyecto"/>
-      <ItemCount stock={5} />
+      <ItemList />
     </main>
   )
 }
