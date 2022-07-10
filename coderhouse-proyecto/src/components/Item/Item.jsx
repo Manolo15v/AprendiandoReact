@@ -1,4 +1,3 @@
-
 export default function Item({ item }) {
 
     const { id, name, status, spicies } = item
