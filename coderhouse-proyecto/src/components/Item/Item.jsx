@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-
 export default function Item({ item }) {
 
     const { id, name, status, spicies } = item
