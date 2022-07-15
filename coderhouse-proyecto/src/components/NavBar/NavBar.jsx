@@ -1,5 +1,6 @@
 import CarWidget from "../Widgets/CarWidget";
-import NavLink from "./NavLink";
+import DropLink from "./DropLink";
+import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 
 export default function NavBar() {
@@ -11,11 +12,14 @@ export default function NavBar() {
 
                     <div className="text-gray-400">
                         <ul className="flex space-x-3">
-                            <NavLink text="soluciones" />
-                            <NavLink text="productos" />
-                            <NavLink text="carrito">
+                            <li>
+                                <DropLink />
+                            </li>
+                            <NavLinks text="soluciones" />
+                            <NavLinks text="productos" />
+                            <NavLinks text="carrito">
                                 <CarWidget />
-                            </NavLink>
+                            </NavLinks>
                         </ul>
                     </div>
                 </nav>

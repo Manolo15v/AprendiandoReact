@@ -32,7 +32,7 @@ export default function ItemDetailContainer() {
     }
 
     return (
-        <main className="bg-gray-50 h-screen text-slate-800">
+        <main className="bg-gray-50 text-slate-800">
             <ItemDetail item={producto}/>
         </main>
     )
