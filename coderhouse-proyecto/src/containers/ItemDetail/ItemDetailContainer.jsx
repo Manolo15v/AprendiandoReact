@@ -1,37 +1,25 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import ItemDetail from "../../components/Item/ItemDetail"
+import getFetch from "../../helpers/getFetch"
 import CargeView from "../CargeView"
 
 export default function ItemDetailContainer() {
 
     const [producto, setProducto] = useState([])
 
-    const url = 'https://rickandmortyapi.com/api/character/1'
+    const { itemId } = useParams()
 
-    const getItems = async () => {
-        try {
-            const res = await fetch(url)
-            const data = await res.json()
-            setProducto(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+    const url = `https://rickandmortyapi.com/api/character/${itemId}`
 
     useEffect(() => {
-        setTimeout(() => {
-            getItems()
-        }, 2000)
+        getFetch(url)
+        .then(data => setProducto(data))
     }, [])
 
-    while (producto.length === 0) {
-        return (
-            <CargeView text="Cargando Productos" />
-        )
-    }
-
     return (
+        producto.length === 0 ? <CargeView text="Cargando Producto" /> :
+
         <main className="bg-gray-50 text-slate-800">
             <ItemDetail item={producto}/>
         </main>

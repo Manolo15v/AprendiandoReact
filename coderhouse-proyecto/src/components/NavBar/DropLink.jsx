@@ -1,7 +1,9 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
+import { NavLink } from "react-router-dom"
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -11,9 +13,9 @@ export default function DropLink() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
-          Options
-          <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+        <Menu.Button className="flex items-center decoration-slate-800  transicton-all hover:text-gray-300 hover:decoration-gray-200 hover:underline decoration-2 underline-offset-2 duration-700">
+          Productos
+          <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -29,59 +31,49 @@ export default function DropLink() {
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
+              <p className='bg-gray-100 text-gray-700 block px-4 py-2 text-sm'>
+                Categorias
+              </p>
+            </Menu.Item>
+            <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <NavLink
+                  to="/"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
                   Account settings
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <NavLink
+                  to="/"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
                   Support
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <NavLink
+                to="/"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
                   License
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
-            <form method="POST" action="#">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full text-left px-4 py-2 text-sm'
-                    )}
-                  >
-                    Sign out
-                  </button>
-                )}
-              </Menu.Item>
-            </form>
           </div>
         </Menu.Items>
       </Transition>

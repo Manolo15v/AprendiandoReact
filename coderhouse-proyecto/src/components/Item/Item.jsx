@@ -24,11 +24,11 @@ export default function Item({ item }) {
 
     return (
         <li className="hover:cursor-pointer rounded bg-gray-200">
-            <Link to="/detail">
+            <Link to={`/detail/${id}`}>
                 <img className="w-full h-auto rounded-t" src={ image } alt="imagen producto" />
                 <div className="m-2">
                     <p className="text-2xl font-bold">{ name }</p>
-                    <p className="text-lg font-semibold">{ gender }</p>
+                    <p className="text-lg font-semibold first-letter:uppercase">{ gender }</p>
                     <p className={`text-lg font-semibold ${statusStyle}`}>{ status }</p>
                     <p>{ species }</p>
                     <p className=" text-sm first-letter:uppercase">{ originName }</p>
