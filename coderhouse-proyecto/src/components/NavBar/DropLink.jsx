@@ -38,39 +38,52 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/"
+                  to="/category/1"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Account settings
+                  Ricks
                 </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/"
+                  to="/category/2"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Support
+                  Mortys
                 </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                to="/"
+                to="/category/3"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  License
+                  Summers
+                </NavLink>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <NavLink
+                to="/category/4"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Beths
                 </NavLink>
               )}
             </Menu.Item>
