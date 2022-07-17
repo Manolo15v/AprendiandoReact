@@ -1,5 +1,5 @@
 import DotsAnimation from "../components/Animations/DotsAnimation";
-import PotionWidget from "../components/Widgets/PotionWidget";
+import { BeakerIcon } from '@heroicons/react/outline';
 
 export default function CargeView({ text }) {
     return (
@@ -8,7 +8,7 @@ export default function CargeView({ text }) {
                 <h1 className="text-5xl font-medium">{ text }</h1>
                 <DotsAnimation />
         
-                <PotionWidget  />
+                <BeakerIcon className="h-12 w-12 ml-6 pt-1"  />
             </div>
         </main>
     )

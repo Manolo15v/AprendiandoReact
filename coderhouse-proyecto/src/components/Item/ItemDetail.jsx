@@ -1,9 +1,49 @@
+import ItemCount from "./ItemCount";
+
 export default function ItemDetail({ item }) {
 
-  
   const { gender, id, image, location, name, origin, species, status, url } = item
 
+  const { name: originName } = origin
+
+  const { name: locationName } = location
+
+  let statusStyle
+
+  let stock = () => {
+    return Math.random() * (15 - 1) + 1;
+  }
+
+  switch (status) {
+    case "Alive":
+      statusStyle = "text-lime-600"
+      break;
+
+    case "Dead":
+      statusStyle = "text-red-700"
+      break;
+
+    default:
+      statusStyle = "first-letter:uppercase text-zinc-800"
+      break;
+  }
+
   return (
-    <div>ItemDetail</div>
+    <div className="flex m-2">
+        <img className="w-auto h-96 rounded" src={ image } alt="imagen producto" />
+      <div className="grid grid-cols-2 m-2 w-full">
+        <div className="ml-3 font-semibold">
+          <p className="text-3xl font-bold">Nombre: { name }</p>
+          <p className="text-xl">Genero: { gender }</p>
+          <p className="text-xl">Estatus: <span className={ statusStyle }>{ status }</span></p>
+          <p>Especie: { species }</p>
+          <p className="first-letter:uppercase">Ubicacion de origen: { originName }</p>
+          <p className="">Ubicacion actual: { locationName }</p>
+        </div>
+        <div className="self-center justify-self-end">
+          <ItemCount stock={ stock() } />
+        </div>
+      </div>
+    </div>
   )
 }
