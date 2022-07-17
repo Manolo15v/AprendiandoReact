@@ -19,16 +19,16 @@ export default function ItemListContainer() {
   useEffect(() => {    
     if (categoryId) {
       switch (categoryId) {
-        case "1":
+        case "ricks":
           url = 'https://rickandmortyapi.com/api/character/?page=1&name=rick'
           break;
-        case "2":
+        case "mortys":
           url = 'https://rickandmortyapi.com/api/character/?page=1&name=morty'
           break;
-        case "3":
+        case "summers":
           url = 'https://rickandmortyapi.com/api/character/?page=1&name=summer'
           break;
-        case "4":
+        case "beths":
           url = 'https://rickandmortyapi.com/api/character/?page=1&name=beth'
           break;
       }
