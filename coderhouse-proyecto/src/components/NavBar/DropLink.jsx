@@ -38,7 +38,7 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/category/1"
+                  to="/category/ricks"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -51,7 +51,7 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/category/2"
+                  to="/category/mortys"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -64,7 +64,7 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                to="/category/3"
+                to="/category/summers"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -77,7 +77,7 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                to="/category/4"
+                to="/category/beths"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
