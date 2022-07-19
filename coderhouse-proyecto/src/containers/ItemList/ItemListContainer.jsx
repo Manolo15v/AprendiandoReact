@@ -12,8 +12,6 @@ export default function ItemListContainer() {
 
   const { categoryId } = useParams()
 
-
-
   let url = 'https://rickandmortyapi.com/api/character/?page=1'
 
   useEffect(() => {    

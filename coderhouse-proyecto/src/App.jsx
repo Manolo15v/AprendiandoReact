@@ -21,6 +21,7 @@ function App() {
             <ItemDetailContainer />
           </Suspense>
         } />
+        <Route path='/cart' element={<CargeView text="El carrito esta cargando" />} />
         <Route path='/charge' element={<CargeView text="You shouldn't be here" />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
