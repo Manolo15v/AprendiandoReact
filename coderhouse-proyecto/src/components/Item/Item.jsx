@@ -7,7 +7,7 @@ export default function Item({ item }) {
     const { name: originName } = origin
 
 
-    let statusStyle 
+    let statusStyle
 
     switch (status) {
         case "Alive":
@@ -23,17 +23,15 @@ export default function Item({ item }) {
     }
 
     return (
-        <li className="hover:cursor-pointer rounded bg-gray-200">
-            <Link to={`/detail/${id}`}>
-                <img className="w-full h-auto rounded-t" src={ image } alt="imagen producto" />
-                <div className="m-2">
-                    <p className="text-2xl font-bold">{ name }</p>
-                    <p className="text-lg font-semibold first-letter:uppercase">{ gender }</p>
-                    <p className={`text-lg font-semibold ${statusStyle}`}>{ status }</p>
-                    <p>{ species }</p>
-                    <p className=" text-sm first-letter:uppercase">{ originName }</p>
-                </div>
-            </Link>
-        </li>
+        <div className="hover:cursor-pointer rounded bg-gray-200">
+            <img className="w-full h-auto rounded-t" src={image} alt="imagen producto" />
+            <div className="m-2">
+                <p className="text-2xl font-bold">{name}</p>
+                <p className="text-lg font-semibold first-letter:uppercase">{gender}</p>
+                <p className={`text-lg font-semibold ${statusStyle}`}>{status}</p>
+                <p>{species}</p>
+                <p className=" text-sm first-letter:uppercase">{originName}</p>
+            </div>
+        </div>
     )
 }
