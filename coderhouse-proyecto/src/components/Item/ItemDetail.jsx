@@ -9,7 +9,7 @@ export default function ItemDetail({ item }) {
 
   const [cantidad, setCantidad] = useState(1)
   const [comprado, setComprado] = useState(false)
-  const { cartList, agregarCarrito } = useCartContext()
+  const { addItem } = useCartContext()
 
   const { gender, id, image, location, name, origin, species, status, url } = item
 
@@ -18,12 +18,11 @@ export default function ItemDetail({ item }) {
   const { name: locationName } = location
 
   let ramdonStock = () => Math.random() * (15 - 1) + 1;
-  console.log(cantidad, comprado);
 
   const onAdd = (cantidad, comprado) => {
     setCantidad(cantidad)
     setComprado(comprado)
-    agregarCarrito({ ...item, cantidad })
+    addItem({ ...item, cantidad })
   }
 
   let statusStyle
