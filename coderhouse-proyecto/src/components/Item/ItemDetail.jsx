@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../Context/CartContext";
+
 import ItemCount from "./ItemCount";
 import ButtonBlue from "../Buttons/ButtonBlue";
-import { Link } from "react-router-dom";
 
 export default function ItemDetail({ item }) {
 
   const [cantidad, setCantidad] = useState(1)
   const [comprado, setComprado] = useState(false)
+  const { cartList, agregarCarrito } = useCartContext()
 
   const { gender, id, image, location, name, origin, species, status, url } = item
 
@@ -15,10 +18,12 @@ export default function ItemDetail({ item }) {
   const { name: locationName } = location
 
   let ramdonStock = () => Math.random() * (15 - 1) + 1;
+  console.log(cantidad, comprado);
 
-  const onAdd = (count) => {
-    setCantidad(count)
-    setComprado(true)
+  const onAdd = (cantidad, comprado) => {
+    setCantidad(cantidad)
+    setComprado(comprado)
+    agregarCarrito({ ...item, cantidad })
   }
 
   let statusStyle
@@ -57,7 +62,7 @@ export default function ItemDetail({ item }) {
       :
       <>
         <div className="flex my-2 mx-28 p-2 bg-gray-200 rounded">
-          <img className="w-auto h-36  rounded" src={image} alt="imagen producto" />
+          <img className="w-auto h-36 rounded" src={image} alt="imagen producto" />
           <div className="ml-3 font-semibold">
             <p className="text-2xl font-bold">Nombre: {name}</p>
             <p className="text-lg">Genero: {gender}</p>
@@ -67,7 +72,7 @@ export default function ItemDetail({ item }) {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3 mx-56">
-          <Link to={`/cart`}>
+          <Link to="/cart">
             <ButtonBlue text="Ir a carrito" />
           </Link>
           <ButtonBlue click={() => setComprado(false)} text="Volver" />
