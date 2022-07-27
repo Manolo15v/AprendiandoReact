@@ -2,9 +2,7 @@ export { useState } from 'react'
 import { PlusSmIcon, MinusSmIcon } from '@heroicons/react/solid';
 import ButtonBlue from '../Buttons/ButtonBlue';
 
-
-
-export default function ItemCount({ stock, initial = 1, productoID , onAdd}) {
+export default function ItemCount({ stock, initial = 1, onAdd }) {
     const [count, setCount] = useState(initial)
 
     const addCount = () => {
@@ -23,7 +21,7 @@ export default function ItemCount({ stock, initial = 1, productoID , onAdd}) {
                 <button className='text-teal-700' onClick={addCount}><PlusSmIcon className="h-6 w-6" /></button>
             </div>
 
-            <ButtonBlue click={() => onAdd(count)} text="Agregar a Carrito" />
+            <ButtonBlue click={() => onAdd(count, true)} text="Agregar a Carrito" />
         </div>
     )
 }
