@@ -8,6 +8,7 @@ import { Suspense, lazy } from 'react'
 import CartProvider from './Context/CartContext'
 
 const ItemDetailContainer = lazy(() => import('./containers/ItemDetail/ItemDetailContainer'))
+const CartContainer = lazy(() => import('./containers/Cart/CartContainer'))
 
 function App() {
 
@@ -23,7 +24,11 @@ function App() {
               <ItemDetailContainer />
             </Suspense>
           } />
-          <Route path='/cart' element={<CargeView text="El carrito esta cargando" />} />
+          <Route path='/cart' element={
+            <Suspense fallback={<CargeView text="Cargando carrito" />}>
+              <CartContainer />
+            </Suspense>
+          } />
           <Route path='/charge' element={<CargeView text="You shouldn't be here" />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Item({ item }) {
 
     const { gender, id, image, location, name, origin, species, status, url } = item

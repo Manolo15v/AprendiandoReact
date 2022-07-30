@@ -1,7 +1,7 @@
 
-export default function ItemCart({ item }) {
+export default function ItemCart({ item,  children}) {
 
-    const { gender, id, image, location, name, origin, species, status, url } = item
+    const { gender, id, image, amount, location, name, origin, species, status, url } = item
 
     return (
         <div className="flex my-2 mx-28 p-2 bg-gray-200 rounded">
@@ -11,8 +11,9 @@ export default function ItemCart({ item }) {
                 <p className="text-lg">Genero: {gender}</p>
                 <p className="text-lg">Estatus: <span className={statusStyle}>{status}</span></p>
                 <p>Especie: {species}</p>
-                <p>Cantidad: {cantidad} </p>
+                <p>Cantidad: {amount} </p>
             </div>
+            {children}
         </div>
     )
 }

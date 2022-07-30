@@ -13,6 +13,8 @@ export default function ItemDetail({ item }) {
 
   const { gender, id, image, location, name, origin, species, status, url } = item
 
+    console.log(item);
+
   const { name: originName } = origin
 
   const { name: locationName } = location
