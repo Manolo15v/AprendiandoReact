@@ -17,7 +17,7 @@ export default function NavBar() {
                                 <DropLink />
                             </li>
                             <NavLinks text="soluciones" />
-                            <NavLinks text="carrito">
+                            <NavLinks href="/cart" text="carrito">
                                 <ShoppingCartIcon className="h-5 w-5 ml-1" />
                             </NavLinks>
                         </ul>

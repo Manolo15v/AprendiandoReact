@@ -38,52 +38,39 @@ export default function DropLink() {
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/category/ricks"
+                  to="/category/racquet"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    active ? 'bg-gray-200 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Ricks
+                  Raquetas
                 </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                  to="/category/mortys"
+                  to="/category/tennis-balls"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    active ? 'bg-gray-200 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Mortys
+                  Pelotas
                 </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <NavLink
-                to="/category/summers"
+                to="/category/shoes"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    active ? 'bg-gray-200 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Summers
-                </NavLink>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <NavLink
-                to="/category/beths"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Beths
+                  Zapatos
                 </NavLink>
               )}
             </Menu.Item>

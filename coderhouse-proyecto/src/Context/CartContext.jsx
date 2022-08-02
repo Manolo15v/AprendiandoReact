@@ -1,30 +1,28 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext } from "react";
 
-const CartContext = createContext([])
-
-export const useCartContext = () => useContext(CartContext)
+export const CartContext = createContext([])
 
 export default function CartProvider({ children }) {
   const [cartList, setCartList] = useState([])
 
-  const addItem = (producto) => {
-    const [productoEncontrado , productoIndex] =isInCart(producto)
+  const addItem = (product) => {
+    const [productFound , productIndex] =isInCart(product)
 
-    !productoEncontrado ? setCartList([...cartList, producto]) : cartList[productoIndex].cantidad += producto.cantidad
+    !productFound ? setCartList([...cartList, product]) : cartList[productIndex].cantidad += product.cantidad
   }
 
-  const removeItem = (producto) => {
-    const [ , productoIndex] =isInCart(producto)
-    cartList.splice(productoIndex, 1)
+  const removeItem = (product) => {
+    const [ , productIndex] =isInCart(product)
+    cartList.splice(productIndex, 1)
+    setCartList(cartList)
   }
 
-  function isInCart(producto) {
-    const productoEncontrado = cartList.find((item) => item.id == producto.id)
-    const productoIndex = cartList.indexOf(productoEncontrado)
+  function isInCart(product) {
+    const productFound = cartList.find((item) => item.id == product.id)
+    const productIndex = cartList.indexOf(productFound)
 
-    return [productoEncontrado , productoIndex]
+    return [productFound , productIndex]
   }
-
 
   return (
     <CartContext.Provider value={{ cartList, addItem, removeItem }}>

@@ -1,18 +1,31 @@
-import { Link } from "react-router-dom";
+import { memo } from "react";
+
+import { useCartContext } from "../../hooks/useCartContext";
 import ButtonRed from "../Buttons/ButtonRed";
 import ItemCart from "../Item/ItemCart";
-import { useCartContext } from "../../Context/useCartConext"
 
-const { removeItem } = useCartContext()
+const CartList = memo(
+  ({ items }) => {
+    const { removeItem } = useCartContext()
 
-export default function CartList({ items }) {
-  return (
-    items.map(item => (
-      <Link to={`/detail/${item.id}`} key={item.id}>
-        <ItemCart item={item}>
-          <ButtonRed text="Eliminar" click={() => removeItem(item.id)}/>
-        </ ItemCart>
-      </Link>
-    ))
-  )
-}
+    let total = items.reduce((count, item) => count + item.price * item.amount, 0)
+
+    return (
+      <>
+        <div>
+          {items.map((item) =>
+            <ItemCart item={item} key={item.id}>
+              <ButtonRed text="Eliminar" click={() => removeItem(item.id)} />
+            </ItemCart>
+          )}
+        </div>
+        <div>
+          <p>Total: </p>
+          <p>{total}</p>
+        </div>
+      </>
+    )
+  }
+)
+
+export default CartList

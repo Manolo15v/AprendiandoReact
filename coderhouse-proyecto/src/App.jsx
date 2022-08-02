@@ -1,10 +1,9 @@
+import { Suspense, lazy } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+
 import NavBar from './components/NavBar/Navbar'
 import ItemListContainer from './containers/ItemList/ItemListContainer'
 import CargeView from './containers/CargeView'
-
-
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { Suspense, lazy } from 'react'
 import CartProvider from './Context/CartContext'
 
 const ItemDetailContainer = lazy(() => import('./containers/ItemDetail/ItemDetailContainer'))
@@ -26,7 +25,7 @@ function App() {
           } />
           <Route path='/cart' element={
             <Suspense fallback={<CargeView text="Cargando carrito" />}>
-              <CartContainer />
+              <CartContainer/>
             </Suspense>
           } />
           <Route path='/charge' element={<CargeView text="You shouldn't be here" />} />

@@ -1,34 +1,15 @@
 export default function Item({ item }) {
 
-    const { gender, id, image, location, name, origin, species, status, url } = item
-
-    const { name: originName } = origin
-
-
-    let statusStyle
-
-    switch (status) {
-        case "Alive":
-            statusStyle = "text-lime-600"
-            break;
-        case "Dead":
-            statusStyle = "text-red-700"
-            break;
-
-        default:
-            statusStyle = "first-letter:uppercase text-zinc-800"
-            break;
-    }
+    const { id, name, image, description, price, stock } = item
 
     return (
-        <div className="hover:cursor-pointer rounded bg-gray-200">
-            <img className="w-full h-auto rounded-t" src={image} alt="imagen producto" />
-            <div className="m-2">
+        <div className="hover:cursor-pointer rounded bg-gray-200 h-full pb-3">
+            <div className="bg-white w-full max-h-60 h-4/6 flex justify-center pb-2">
+                <img className="w-auto h-auto rounded-t" src={image} alt="imagen producto" />
+            </div>
+            <div className="m-2 flex flex-col justify-between h-2/6">
                 <p className="text-2xl font-bold">{name}</p>
-                <p className="text-lg font-semibold first-letter:uppercase">{gender}</p>
-                <p className={`text-lg font-semibold ${statusStyle}`}>{status}</p>
-                <p>{species}</p>
-                <p className=" text-sm first-letter:uppercase">{originName}</p>
+                <p className="text-xl font-semibold first-letter:uppercase ">{price}$</p>
             </div>
         </div>
     )

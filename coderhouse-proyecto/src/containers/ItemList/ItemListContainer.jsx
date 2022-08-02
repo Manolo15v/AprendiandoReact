@@ -1,46 +1,44 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 import ItemList from "../../components/Item/ItemList";
 import CargeView from "../CargeView";
 
-import getFetch from "../../helpers/getFetch";
-
 export default function ItemListContainer() {
 
-  const [productos, setProductos] = useState([])
+  const [products, setProducts] = useState([])
 
   const { categoryId } = useParams()
 
-  let url = 'https://rickandmortyapi.com/api/character/?page=1'
 
-  useEffect(() => {    
-    if (categoryId) {
-      switch (categoryId) {
-        case "ricks":
-          url = 'https://rickandmortyapi.com/api/character/?page=1&name=rick'
-          break;
-        case "mortys":
-          url = 'https://rickandmortyapi.com/api/character/?page=1&name=morty'
-          break;
-        case "summers":
-          url = 'https://rickandmortyapi.com/api/character/?page=1&name=summer'
-          break;
-        case "beths":
-          url = 'https://rickandmortyapi.com/api/character/?page=1&name=beth'
-          break;
+  useEffect(() => {
+
+    const getItems = new Promise((resolve, reject) => {
+      const db = getFirestore()
+
+      let queryItems 
+      if(categoryId) {
+        queryItems = query(
+          collection(db, "items"),
+          where("category", "==", categoryId)
+        )
+      } else{
+        queryItems = collection(db, "items")
       }
-    }
+      
+      resolve(getDocs(queryItems))
+      reject('Not found')
+    })
 
-    getFetch(url)
-      .then(data =>setProductos(data.results))
+    getItems.then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))      
   }, [categoryId])
 
   return (
-    productos.length === 0 ? <CargeView text="Cargando Productos" /> :
+    products.length === 0 ? <CargeView text="Cargando Productos" /> :
 
       <main className="bg-gray-50 flex items-center text-slate-800">
-        <ItemList items={productos} />
+        <ItemList items={products} />
       </main>
   )
 }
