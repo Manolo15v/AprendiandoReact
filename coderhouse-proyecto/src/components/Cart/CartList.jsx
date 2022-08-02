@@ -6,16 +6,14 @@ import ItemCart from "../Item/ItemCart";
 
 const CartList = memo(
   ({ items }) => {
-    const { removeItem } = useCartContext()
-
-    let total = items.reduce((count, item) => count + item.price * item.amount, 0)
+    const { total ,removeItem } = useCartContext()
 
     return (
       <>
         <div>
           {items.map((item) =>
             <ItemCart item={item} key={item.id}>
-              <ButtonRed text="Eliminar" click={() => removeItem(item.id)} />
+              <ButtonRed text="Eliminar" click={() => removeItem(item)} />
             </ItemCart>
           )}
         </div>

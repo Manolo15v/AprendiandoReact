@@ -1,10 +1,14 @@
+import { ShoppingCartIcon } from '@heroicons/react/solid';
+import { useCartContext } from '../../hooks/useCartContext';
+
 import DropLink from "./DropLink";
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 
-import { ShoppingCartIcon } from '@heroicons/react/solid';
 
 export default function NavBar() {
+
+    const { cartList } = useCartContext()
     return (
         <header className="bg-slate-800">
             <div className="container">
@@ -19,6 +23,7 @@ export default function NavBar() {
                             <NavLinks text="soluciones" />
                             <NavLinks href="/cart" text="carrito">
                                 <ShoppingCartIcon className="h-5 w-5 ml-1" />
+                               {cartList.length != 0 &&  <p className='border-none'>{cartList.length}</p>}
                             </NavLinks>
                         </ul>
                     </div>
