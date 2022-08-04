@@ -19,9 +19,10 @@ const CartList = memo(
             </ItemCart>
           )}
         </div>
-        <div className="Flex">
-          <p>Total: </p>
-          <p>{total}$</p>
+        <div className="flex justify-evenly">
+            <p className="font-semibold text-lg underline decoration-slate-800 decoration-2">Total: {total}$</p>
+         
+          
           <Link to="/">
             <ButtonBlue text="Proceder a pago" />
           </Link>

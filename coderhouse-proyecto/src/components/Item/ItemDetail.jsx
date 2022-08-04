@@ -47,7 +47,9 @@ export default function ItemDetail({ item }) {
           <Link to="/cart">
             <ButtonBlue text="Ir a carrito" style="w-full"/>
           </Link>
-          <ButtonBlue click={() => setBought(false)} text="Volver" style="w-full"/>
+          <Link to="/">
+           <ButtonBlue  text="Volver" style="w-full"/>
+          </Link>
         </div>
       </>
   )

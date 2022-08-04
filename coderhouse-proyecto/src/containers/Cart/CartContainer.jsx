@@ -9,6 +9,9 @@ export default function CartContainer() {
     const { cartList } = useCartContext()
 
     return (
-        cartList.length === 0 ? <CartEmpty/> : <Cart items={cartList} /> 
+        <main className="bg-gray-50 text-slate-800">
+            {cartList.length === 0 ? <CartEmpty/> : <Cart items={cartList} />}
+        </main>
+         
     )
 }

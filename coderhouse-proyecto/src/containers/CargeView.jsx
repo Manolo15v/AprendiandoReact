@@ -1,5 +1,5 @@
-import DotsAnimation from "../components/Animations/DotsAnimation";
 import { BeakerIcon } from '@heroicons/react/outline';
+import DotsAnimation from "../components/Animations/DotsAnimation";
 
 export default function CargeView({ text }) {
     return (

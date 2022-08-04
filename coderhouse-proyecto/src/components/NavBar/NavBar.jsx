@@ -22,7 +22,6 @@ export default function NavBar() {
                             <li>
                                 <DropLink />
                             </li>
-                            <NavLinks text="soluciones" />
                             <NavLinks href="/cart" text="carrito">
                                 <CartWiget />
                             </NavLinks>
