@@ -16,15 +16,16 @@ Como levantar el proyecto localmente paso a paso:
 
 Dependencias:
 
-  "react": Libreria/framework principal del proyecto
+   "react" "^18.0.0": Libreria/framework principal del proyecto
   
-  "react-router-dom": Usado para la navegacion y routing
+  "react-router-dom" "^6.3.0": Usado para la navegacion y routing
+
+  "firebase" "^9.9.1": Backend del proyecto con firestore
   
-  "vite": Empaquetador 
+  "vite" "^2.9.9": Empaquetador 
   
-  "tailwindcss": Framework de css para el estilo de los componentes
+  "tailwindcss" "^3.1.4": Framework de css para el estilo de los componentes
   
-  "@headlessui/react": Libreria de tailwind para componentes complejos de ui
+  "@headlessui/react" "^1.6.6": Libreria de tailwind para componentes complejos de ui
     
-  "@heroicons/react": Libreria de tailwind para widgets en svg
-   
+  "@heroicons/react" "^1.0.6": Libreria de tailwind para widgets en svg
