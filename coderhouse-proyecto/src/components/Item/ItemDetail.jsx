@@ -45,9 +45,11 @@ export default function ItemDetail({ item }) {
         </div>
         <div className="grid grid-cols-2 gap-3 mx-56">
           <Link to="/cart">
-            <ButtonBlue text="Ir a carrito" />
+            <ButtonBlue text="Ir a carrito" style="w-full"/>
           </Link>
-          <ButtonBlue click={() => setBought(false)} text="Volver" />
+          <Link to="/">
+           <ButtonBlue  text="Volver" style="w-full"/>
+          </Link>
         </div>
       </>
   )

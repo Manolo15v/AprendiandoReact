@@ -6,7 +6,7 @@ export default function ItemCart({ item, children }) {
     return (
 
         <div className="flex my-2 mx-28 p-2 bg-gray-200 rounded">
-            <Link to={`/detail/${item.id}`} key={item.id}>
+            <Link to={`/detail/${id}`} >
                 <img className="w-auto h-36 rounded" src={image} alt="imagen producto" />
                 <div className="ml-3 font-semibold">
                     <p className="text-2xl font-bold">{name}</p>
