@@ -8,7 +8,7 @@ export default function CartEmpty() {
         <h1 className="text-5xl font-medium">Tu carrito esta vacio</h1>
 
         <Link className="" to="/">
-          <ButtonBlue text={"Volver a inicio"} />
+          <ButtonBlue text={"Volver a inicio"}  style="w-full"/>
         </Link>
 
       </div>

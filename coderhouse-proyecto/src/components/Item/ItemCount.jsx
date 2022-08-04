@@ -21,7 +21,7 @@ export default function ItemCount({ stock, initial = 1, onAdd }) {
                 <button className='text-teal-700' onClick={addCount}><PlusSmIcon className="h-6 w-6" /></button>
             </div>
 
-            <ButtonBlue click={() => onAdd(count, true)} text="Agregar a Carrito" />
+            <ButtonBlue click={() => onAdd(count, true)} text="Agregar a Carrito" style='w-full' />
         </div>
     )
 }

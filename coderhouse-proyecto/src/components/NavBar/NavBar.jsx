@@ -1,9 +1,11 @@
-import { ShoppingCartIcon } from '@heroicons/react/solid';
+
 import { useCartContext } from '../../hooks/useCartContext';
+import CartWiget from '../Widgets/CartWiget';
 
 import DropLink from "./DropLink";
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
+
 
 
 export default function NavBar() {
@@ -22,8 +24,7 @@ export default function NavBar() {
                             </li>
                             <NavLinks text="soluciones" />
                             <NavLinks href="/cart" text="carrito">
-                                <ShoppingCartIcon className="h-5 w-5 ml-1" />
-                               {cartList.length != 0 &&  <p className='border-none'>{cartList.length}</p>}
+                                <CartWiget />
                             </NavLinks>
                         </ul>
                     </div>
