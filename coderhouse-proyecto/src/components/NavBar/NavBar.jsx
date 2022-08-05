@@ -1,16 +1,10 @@
-
-import { useCartContext } from '../../hooks/useCartContext';
-import CartWiget from '../Widgets/CartWiget';
-
-import DropLink from "./DropLink";
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
-
-
+import DropLink from "./DropLink";
+import CartWiget from '../Widgets/CartWiget';
 
 export default function NavBar() {
 
-    const { cartList } = useCartContext()
     return (
         <header className="bg-slate-800">
             <div className="container">

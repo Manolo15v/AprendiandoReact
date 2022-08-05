@@ -1,6 +1,6 @@
 export default function Item({ item }) {
 
-    const { id, name, image, description, price, stock } = item
+    const { name, image, price } = item
 
     return (
         <div className="hover:cursor-pointer rounded bg-gray-200 h-full pb-3">
