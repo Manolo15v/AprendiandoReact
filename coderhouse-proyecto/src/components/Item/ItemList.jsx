@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import Item from "./item";
+import Item from "./Item";
+
 
 const ItemList = memo(
     ({ items }) => {

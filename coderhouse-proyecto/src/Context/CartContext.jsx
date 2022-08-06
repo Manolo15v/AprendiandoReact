@@ -26,12 +26,20 @@ export default function CartProvider({ children }) {
     setCartList(newCartList)
   }
 
-  const sendOrder = () => {
-    const order = {
-      buyer : { name:"Manuel", phone:"1010101", email:"Manolo15v@gmail.com" },
-      items: cartList,
-      total: total,
-    }
+  const sendOrder = (buyer) => {
+    const {name, phone, email} = buyer
+
+    const order = {}
+    order.buyer = {name, phone, email}
+    order.items = cartList.map(product => {
+      return {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        amount: product.amount
+      }
+    })
+    order.total = total
 
     const db = getFirestore()
     const ordersCollection = collection(db , "orders")
