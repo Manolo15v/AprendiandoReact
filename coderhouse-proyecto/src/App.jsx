@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import "react-toastify/dist/ReactToastify.css"
 
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './containers/ItemList/ItemListContainer'

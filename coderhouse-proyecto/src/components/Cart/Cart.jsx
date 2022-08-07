@@ -6,7 +6,7 @@ import ButtonBlue from "../Buttons/ButtonBlue";
 import ButtonRed from "../Buttons/ButtonRed";
 import ItemCart from "../Item/ItemCart";
 
-const CartList = memo(
+const Cart = memo(
   ({ items }) => {
     const { total, removeItem } = useCartContext()
 
@@ -32,4 +32,4 @@ const CartList = memo(
   }
 )
 
-export default CartList
+export default Cart
