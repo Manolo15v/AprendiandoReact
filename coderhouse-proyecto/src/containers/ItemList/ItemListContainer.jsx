@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 import ItemList from "../../components/Item/ItemList";
 import CargeView from "../CargeView";
+import { getsDocs } from "../../firebase/funtionsFirebase";
 
 export default function ItemListContainer() {
 
@@ -13,25 +13,8 @@ export default function ItemListContainer() {
 
 
   useEffect(() => {
-
-    const getItems = new Promise((resolve, reject) => {
-      const db = getFirestore()
-
-      let queryItems 
-      if(categoryId) {
-        queryItems = query(
-          collection(db, "items"),
-          where("category", "==", categoryId)
-        )
-      } else{
-        queryItems = collection(db, "items")
-      }
-      
-      resolve(getDocs(queryItems))
-      reject('Not found')
-    })
-
-    getItems.then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))      
+    getsDocs("items", "category", "==", categoryId)
+    .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))      
   }, [categoryId])
 
   return (

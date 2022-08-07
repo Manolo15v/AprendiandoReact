@@ -1,9 +1,9 @@
 import { useEffect , useState } from "react"
 import { useParams } from "react-router-dom"
-import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 import ItemDetail from "../../components/Item/ItemDetail"
 import CargeView from "../CargeView"
+import { getsDoc } from "../../firebase/funtionsFirebase"
 
 export default function ItemDetailContainer() {
 
@@ -12,15 +12,7 @@ export default function ItemDetailContainer() {
     const { itemId } = useParams()
 
     useEffect(() => {
-        const getItem = new Promise((resolve, reject) => {
-            const db = getFirestore()
-
-            const queryItem = doc(db, "items", itemId)
-            resolve(getDoc(queryItem)) 
-            reject('Not found')
-        })
-
-        getItem.then(resp => setProduct({ id: resp.id, ...resp.data() }))
+        getsDoc("items", itemId).then(resp => setProduct({ id: resp.id, ...resp.data() }))
     }, [])
 
     return (

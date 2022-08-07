@@ -6,7 +6,7 @@ import { useCartContext } from "../../hooks/useCartContext";
 
 export default function PaymentContainer() {
   
-  const { clearCart, sendOrder, orderId } = useCartContext()
+  const { setOrder, orderId } = useCartContext()
 
   const [buyer, setBuyer] = useState({ name: "", phone: "", email: "", emailValidate: "" })
 
@@ -28,8 +28,7 @@ export default function PaymentContainer() {
     e.preventDefault();
 
     if (validatForm() === true) {
-      sendOrder(buyer)
-      clearCart()
+      setOrder(buyer)
     }
   }
 

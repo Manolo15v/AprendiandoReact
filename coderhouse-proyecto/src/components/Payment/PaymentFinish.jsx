@@ -1,5 +1,4 @@
 export default function PaymentFinish({ orderId }) {
-
     return (
         <div className="bg-gray-200 mt-3 p-2 rounded-sm shadow-md">
             <h2 className=" text-xl font-bold mb-2">Su compra ya fue procesada</h2>
