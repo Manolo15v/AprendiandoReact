@@ -1,4 +1,4 @@
-export { useState } from 'react'
+import { useState } from 'react'
 import { PlusSmIcon, MinusSmIcon } from '@heroicons/react/solid';
 import ButtonBlue from '../Buttons/ButtonBlue';
 
