@@ -1,8 +1,8 @@
 # AprendiandoReact
 
-![E-shop](https://user-images.githubusercontent.com/96487381/179403102-92b94bc5-00cc-470f-bbc1-c5c96e3b1db7.gif)
+Este proyecto es un e-shop hecho con react y tailwindcss, con firebase como backend
 
-Este proyecto una e-shop con la Rick and Morty API para simular los productos de la tienda, todo hecho con react y tailwindcss
+Esta desplegado en vercel, link: https://aprendiando-react.vercel.app/
 
 Como levantar el proyecto localmente paso a paso:
 
