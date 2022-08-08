@@ -1,21 +1,17 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
 
 import ItemList from "../../components/Item/ItemList";
 import CargeView from "../CargeView";
 import { getsDocs } from "../../firebase/funtionsFirebase";
 
+
 export default function ItemListContainer() {
 
-  const [products, setProducts] = useState([])
-
   const { categoryId } = useParams()
+  const products = useProducts(categoryId)
 
 
-  useEffect(() => {
-    getsDocs("items", "category", "==", categoryId)
-    .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))      
-  }, [categoryId])
 
   return (
     products.length === 0 ? <CargeView text="Cargando Productos" /> :
